@@ -2,12 +2,21 @@
 Asegúrate que estes valores sexan positivos, para eso valida os datos.
 '''
 
+def validar(numero):
+    if numero < 0:
+        return False
+
 base = int(input("Ingresa a base: "))
+while validar(base) == False:
+    base = int(input("Ingresa a base: "))
+
 altura = int(input("Ingresa a altura: "))
+while validar(altura) == False:
+    altura = int(input("Ingresa a altura: "))
+
 
 def area(base, altura):
     area = base * altura
     return area
 
 print(area(base, altura))
-
