@@ -3,4 +3,7 @@
 
 lista = [50, 75, 46, 22, 80, 65, 8]
 
+print("Menor da lista: ")
+print(min(lista))
+print("\nMaior da lista: ")
 print(max(lista))
