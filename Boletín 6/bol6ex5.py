@@ -9,10 +9,10 @@ abecedario = [
     "u", "v", "w", "x", "y", "z"
 ]
 
-nueva_lista = [letra for i, letra in enumerate(abecedario, 1) if i % 3 != 0]
+nova_lista = [letra for i, letra in enumerate(abecedario, 1) if i % 3 != 0]
 
-print("Lista sin las letras en posiciones múltiplos de 3:")
-for letra in nueva_lista:
+print("Lista sen as letras en posicións múltiplos de 3:")
+for letra in nova_lista:
     print(letra)
 
 
