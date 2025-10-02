@@ -13,3 +13,5 @@ varianza = sum((x - media) ** 2 for x in numeros) / len(numeros)
 desviacion = math.sqrt(varianza)
 
 print(f"Desviación estándar: {desviacion}")
+
+#Proba de sincronización
