@@ -9,9 +9,10 @@ abecedario = [
     "u", "v", "w", "x", "y", "z"
 ]
 
-for valor in range(0, len(abecedario), 3):
-    if abecedario.count(valor) % 3 == 0:
-        abecedario.remove(valor)
+nueva_lista = [letra for i, letra in enumerate(abecedario, 1) if i % 3 != 0]
 
-for letter in abecedario:
-    print(letter)
+print("Lista sin las letras en posiciones múltiplos de 3:")
+for letra in nueva_lista:
+    print(letra)
+
+
