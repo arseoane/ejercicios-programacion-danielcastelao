@@ -4,5 +4,6 @@ lista = []
 for i in range(1, 11):
     lista.append(i)
 
+
 for i in range(9, -1, -1):
     print(lista[i], end=',')
