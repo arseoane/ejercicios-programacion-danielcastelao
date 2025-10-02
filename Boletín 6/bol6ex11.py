@@ -15,3 +15,4 @@ desviacion = math.sqrt(varianza)
 print(f"Desviación estándar: {desviacion}")
 
 
+print()
