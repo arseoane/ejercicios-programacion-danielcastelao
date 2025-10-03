@@ -3,6 +3,7 @@ En particular, o método deberá imprimir o número de letras, díxitos e espazo
 Tenta facer un programa que escriba o cálculo da cadea: "Ola, son alumno de DAM1, e son programador desde o 2025".'''
 
 cadea = "Ola, son alumno de DAM1, e son programador desde o 2025"
+print(cadea)
 
 letras = 0
 numeros = 0
