@@ -2,8 +2,16 @@
 En particular, o método deberá imprimir o número de letras, díxitos e espazos en branco da cadea.
 Tenta facer un programa que escriba o cálculo da cadea: "Ola, son alumno de DAM1, e son programador desde o 2025".'''
 
+def barras(string):
+    for n in range(0, len(string)):
+        print("-", end="-")
+    print("-")
+
+
 cadea = "Ola, son alumno de DAM1, e son programador desde o 2025"
-print(cadea)
+
+barras(cadea)
+print("Cadea: ", cadea)
 
 letras = 0
 numeros = 0
@@ -20,7 +28,9 @@ for caracter in cadea:
     else:
         simbolos += 1
 
+barras(cadea)
 print("Letras: ", letras)
 print("Números: ", numeros)
 print("Símbolos: ", simbolos)
 print("Espazos: ", espazos)
+print("---------------------")
