@@ -4,4 +4,5 @@ cadea = "Guido Van Rossum creou Python"
 
 cadea = cadea.replace(' ', '')
 
-print(cadea)
+print(f"Sen espazos: {cadea}")
+
