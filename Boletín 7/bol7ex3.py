@@ -1,4 +1,4 @@
-''' 3. Invertir o texto: “Python para todos” '''
+''' 3. Invertir o texto: “Python para todos”'''
 
 cadea = "Python para todos"
 
