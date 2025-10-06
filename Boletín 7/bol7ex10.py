@@ -4,8 +4,8 @@ Tenta facer un programa que escriba o cálculo da cadea: "Ola, son alumno de DAM
 
 def barras(string):
     for n in range(0, len(string)):
-        print("-", end="-")
-    print("-")
+        print("_", end="")
+    print("_")
 
 
 cadea = "Ola, son alumno de DAM1, e son programador desde o 2025"
@@ -29,6 +29,7 @@ for caracter in cadea:
         simbolos += 1
 
 barras(cadea)
+print("Número de...")
 print("Letras: ", letras)
 print("Números: ", numeros)
 print("Símbolos: ", simbolos)
