@@ -15,6 +15,12 @@ for car in palabra:
 while not adivino:
     print(adivinar)
     letra = input("\nIngresa unha letra: ")
+    indices = [i for i, c in enumerate(palabra) if c == letra]
     if letra in palabrac:
-        adivinar[palabrac.find(letra)] = letra
+        for indice in indices:
+            adivinar = adivinar[:indice] + letra + adivinar[indice+1:]
+
+
+    else:
+        print(f"La letra {letra} non está.")
 
