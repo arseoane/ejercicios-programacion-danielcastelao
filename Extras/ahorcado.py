@@ -1,6 +1,6 @@
 #ahorcado
 from random import randint
-
+vidas = 5
 adivino = False
 palabras = ["zapato", "castelo", "ordenador", "deporte"]
 palabra = palabras[randint(0, len(palabras)-1)]
@@ -23,4 +23,8 @@ while not adivino:
 
     else:
         print(f"La letra {letra} non está.")
+        vidas -= 1
+        print(f"Quédanche {vidas} intentos.")
 
+    if vidas == 0:
+        break
