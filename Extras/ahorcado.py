@@ -27,4 +27,9 @@ while not adivino:
         print(f"Quédanche {vidas} intentos.")
 
     if vidas == 0:
+        print("Perdiches!")
+        print(f"A palabra era: {palabra}")
         break
+
+if adivino:
+    print("Vitoria!")
