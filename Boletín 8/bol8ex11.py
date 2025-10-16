@@ -2,6 +2,7 @@
 lonxitude. As líñas deben cortarse correctamente nos espazos (sen cortar as palabras).
 '''
 
+
 def listacar(texto, lon):
     lista = []
     i = 0
@@ -12,4 +13,4 @@ def listacar(texto, lon):
             break
     return lista
 
-print(listacar("Hola buenas señores", 5))
+print(listacar("Hola buenas señores", 10))
