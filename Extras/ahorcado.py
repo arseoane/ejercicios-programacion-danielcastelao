@@ -31,5 +31,8 @@ while not adivino:
         print(f"A palabra era: {palabra}")
         break
 
+    if "_" not in adivinar:
+        adivino = True
+
 if adivino:
     print("Vitoria!")
