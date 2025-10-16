@@ -28,3 +28,4 @@ for n in lista:
     lista.append(random.randint(0, 100))
 
 print(treslistas(lista, 50))
+
