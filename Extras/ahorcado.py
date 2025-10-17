@@ -31,7 +31,7 @@ while not adivino:
 
 
     else:
-        print(f"La letra {letra} non está.")
+        print(f"A letra {letra} non está.")
         vidas -= 1
         print(f"Quédanche {vidas} intentos.")
 
