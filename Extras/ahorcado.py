@@ -2,7 +2,7 @@
 from random import randint
 vidas = 5
 adivino = False
-palabras = ["zapato", "castelo", "ordenador", "deporte"]
+palabras = ["zapato", "castelo", "ordenador", "deporte", "bastón"]
 palabra = palabras[randint(0, len(palabras)-1)]
 def eliminar_acentos_replace(cadena):
     replacements = (
