@@ -4,6 +4,15 @@ vidas = 5
 adivino = False
 palabras = ["zapato", "castelo", "ordenador", "deporte"]
 palabra = palabras[randint(0, len(palabras)-1)]
+def eliminar_acentos_replace(cadena):
+    replacements = (
+        ("á", "a"), ("é", "e"), ("í", "i"), ("ó", "o"), ("ú", "u"),
+        ("Á", "A"), ("É", "E"), ("Í", "I"), ("Ó", "O"), ("Ú", "U")
+    )
+    for a, b in replacements:
+        cadena = cadena.replace(a, b)
+    return cadena
+palabra = eliminar_acentos_replace(palabra)
 palabrac = []
 for car in palabra:
     palabrac.append(car)
