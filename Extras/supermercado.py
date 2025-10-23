@@ -40,5 +40,5 @@ def impresion(caixa,impresion_total = False):
         for caixas in efectivo:
             print(caixas)
 
-print(calc_impo(2))
+print(calc_impo(2), False)
 print(impresion(1,False))
