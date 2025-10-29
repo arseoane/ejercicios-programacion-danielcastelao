@@ -12,10 +12,10 @@ while True:
     print('''
 ========[ Lista de Compras ]========
 
-        [1] Engadir produto
-        [2] Eliminar produto
-        [3] Amosar lista
-        [4] Saír
+        [1] Engadir produto.
+        [2] Eliminar produto.
+        [3] Amosar lista.
+        [4] Saír.
     ''')
 
     opcion = int(input("    [?] Opción: "))
@@ -24,14 +24,20 @@ while True:
         produto = input("    [?] Produto a engadir: ")
         listacompras.append(produto)
     elif opcion == 2:
-        produto = input("    [?] Produto a eliminar: ")
-        listacompras.remove(produto)
+        if len(listacompras) == 0:
+            print("    [!] A lista está baleira.")
+        else:
+            produto = input("    [?] Produto a eliminar: ")
+            listacompras.remove(produto)
     elif opcion == 3:
-        print("    [+] Lista de Compras: ")
-        for produto in listacompras:
-            print(f"         [+] {produto}.")
+        if len(listacompras) == 0:
+            print("    [!] A lista está baleira.")
+        else:
+            print("    [+] Lista de Compras: ")
+            for num in range(len(listacompras)):
+                print(f"         [{num + 1}] {listacompras[num]}.")
     elif opcion == 4:
             print("    [i] Saíndo do programa...")
             break
     else:
-        print("     [!] Opción inválida!")
+        print("    [!] Opción inválida.")
