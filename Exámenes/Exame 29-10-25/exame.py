@@ -1,3 +1,5 @@
+# 29-10-25
+
 temps_medias = []
 dias = ['Luns', 'Martes', 'Mércores', 'Xoves', 'Venres', 'Sábado','Domingo']
 
