@@ -13,4 +13,5 @@ def listacar(texto, lon):
             break
     return lista
 
+
 print(listacar("Hola buenas señores", 10))
