@@ -5,3 +5,10 @@ def almacenarTemperaturas():
         temperatura = float(input(f"Introduce a temperatura media diaria do día {dia}: "))
         temperaturas.append(temperatura)
     return temperaturas
+
+def calcularMediaTemperaturas(temperaturas):
+    totalTemperatura = 0
+    for temperatura in temperaturas:
+        totalTemperatura += temperatura
+    return totalTemperatura/len(temperaturas)
+
