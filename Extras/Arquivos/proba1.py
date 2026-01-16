@@ -17,6 +17,7 @@ file2.write("\n")
 
 file2.close()
 
+lineasfile3 = 0
 try:
     file3 = open("./test.txt","r")
 except FileNotFoundError as e:
@@ -24,6 +25,8 @@ except FileNotFoundError as e:
 else:
     for i in file3:
         print(i)
+        lineasfile3 += 1
     file3.close()
 finally:
+    print(f"Lines: {lineasfile3}")
     print("End")
