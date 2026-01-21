@@ -18,7 +18,7 @@ class Cliente():
 print('''
 1. Gardar cliente.
 
-2. Listar cliente.
+2. Listar clientes.
 ''')
 
 opcion = input("Ingrese una opción: ")
@@ -27,3 +27,7 @@ if opcion == "1":
     cliente = Cliente(input("Nome: "),input("Teléfono: "))
     with open("clientes.txt","a") as f:
         f.write(str(cliente))
+
+elif opcion == "2":
+    with open("clientes.txt","r") as f:
+        print(f.readlines())
