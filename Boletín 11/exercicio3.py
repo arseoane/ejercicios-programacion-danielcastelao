@@ -1,0 +1,47 @@
+# Crear unha aplicación para anotar tarefas para facer. A tarefa terá unha data, hora, duración, Nome da tarefa, descrición,
+# estado (feita, non feita).
+# Para iso crear unha clase Tarefa que manexe os datos relacionados coa tarefa.
+# O usuario poderá facer as seguintes operacións:
+# Agregar unha nova tarefa.
+# Borrar unha tarefa.
+# Modificar unha tarefa.
+# Listar o listado de tarefas.
+# As tarefas se gardarán nun ficheiro binario chamado tarefas.dat.
+
+print('''Opcións: 
+1. Agregar nova tarefa.
+2. Borrar tarefa.
+3. Modificar tarefa.
+4. Listar tarefas.
+5. Pechar programa.''')
+
+opcion = input("Opción: ")
+
+if opcion == "5":
+    exit()
+elif opcion == "1":
+    nome = {input("Nome de tarefa: ")}
+    descricion = {input("Descrición de tarefa: ")}
+    data = {input("Data de tarefa (aaaa-mm-dd): ")}
+    hora = {input("Hora de tarefa (hh:mm): ")}
+    duracion = {input("Duración de tarefa (hh:mm): ")}
+    estado = {input("Estado de tarefa (feita/non feita): ")}
+    with open("tarefas.dat", "a", encoding="utf-8") as tarefa:
+        tarefa.write(f'''{nome},{descricion},{data},{hora},{duracion},{estado}\n''')
+
+elif opcion == "2":
+    with open("tarefas.dat", "a", encoding="utf-8") as tarefa:
+        nome = input("Nome de tarefa a borrar: ")
+        for linea in tarefa.readlines():
+            linea = linea.lower()
+            if nome in linea:
+                linea = ""
+
+elif opcion == "3":
+    print("En desarrollo.")
+
+elif opcion == "4":
+    with open("tarefas.dat", "r", encoding="utf-8") as tarefa:
+        for linea in tarefa.readlines():
+            print(linea.strip("\n"))
+
