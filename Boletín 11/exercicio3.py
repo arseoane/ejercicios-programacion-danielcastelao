@@ -19,6 +19,7 @@ opcion = input("Opción: ")
 
 if opcion == "5":
     exit()
+
 elif opcion == "1":
     nome = {input("Nome de tarefa: ")}
     descricion = {input("Descrición de tarefa: ")}
@@ -30,12 +31,15 @@ elif opcion == "1":
         tarefa.write(f'''{nome},{descricion},{data},{hora},{duracion},{estado}\n''')
 
 elif opcion == "2":
-    with open("tarefas.dat", "a", encoding="utf-8") as tarefa:
+    with open("tarefas.dat", "a+", encoding="utf-8") as tarefa:
         nome = input("Nome de tarefa a borrar: ")
-        for linea in tarefa.readlines():
-            linea = linea.lower()
-            if nome in linea:
-                linea = ""
+        with open("tarefas.dat", "r") as f:
+            lineas = f.readlines()
+
+        with open("tarefas.dat", "w") as f:
+            for linea in lineas:
+                if nome not in linea:
+                    f.write(linea)
 
 elif opcion == "3":
     print("En desarrollo.")
