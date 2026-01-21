@@ -42,7 +42,14 @@ elif opcion == "2":
                     f.write(linea)
 
 elif opcion == "3":
-    print("En desarrollo.")
+    nome = input("Nome de tarefa: ")
+    nome2 = input("Nome novo de tarefa: ")
+    with open("tarefas.dat", "r") as f:
+        lineas = f.readlines()
+
+    with open("tarefas.dat", "w") as f:
+        for linea in lineas:
+            linea = linea.replace(nome, nome2)
 
 elif opcion == "4":
     with open("tarefas.dat", "r", encoding="utf-8") as tarefa:
