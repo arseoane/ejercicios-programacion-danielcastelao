@@ -24,6 +24,7 @@ while True:
         opcion = int(input("\nOpción: "))
         if opcion == 0:
             break
+
         elif opcion == 1:
             nome = input("Nome: ")
             telefonos = []
@@ -46,9 +47,6 @@ while True:
 
         else:
             print("Opción inválida.")
-
-
-
 
     except FileNotFoundError:
         print("Ficheiro 'axenda.json' non atopado.")
