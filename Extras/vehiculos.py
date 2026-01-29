@@ -12,6 +12,22 @@ class Vehiculo(object):
     def matricula(self,matricula):
         self._matricula = matricula
 
+    @property
+    def velocidadeMaxima(self):
+        return self.velocidadeMaxima
+
+    @velocidadeMaxima.setter
+    def velocidadeMaxima(self,velocidadeMaxima):
+        self._velocidadeMaxima = velocidadeMaxima
+
+    @property
+    def autonomia(self):
+        return self.autonomia
+
+    @autonomia.setter
+    def autonomia(self,autonomia):
+        self._autonomia = autonomia
+
     def arrincar(self):
         print("Arrincamos")
 
