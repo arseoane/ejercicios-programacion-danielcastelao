@@ -36,3 +36,17 @@ class Vehiculo(object):
 
     def mostrarDatos(self):
         return f"{self.matricula}, {self.velocidadeMaxima}, {self.autonomia}"
+
+class Punto():
+    def __init__(self,x,y):
+        self.x = x
+        self.y = y
+
+    def __str__(self):
+        return f"Punto: X: {self.x}, Y: {self.y}"
+
+    def calcularArea(self):
+        return (self.x * self.x) + (self.y * self.y)
+
+    def calcularVolume(self):
+        return (self.x * self.x) + (self.y * self.y)
