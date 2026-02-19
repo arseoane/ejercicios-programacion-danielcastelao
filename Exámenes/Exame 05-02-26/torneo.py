@@ -14,10 +14,10 @@ class Torneo:
         else:
             self.__num_equipos = num_equipos
 
-        self._equipos.append(self.__equipos)
+        self._equipos.append(self)
 
     def __str__(self):
-        return str(self.__nome, self.__equipos, self.__num_equipos)
+        return str(f"{self.__nome}, {self.__equipos}, {self.__num_equipos}")
 
     def get_nome(self):
         return self.__nome
@@ -42,9 +42,9 @@ class Torneo:
         clasificacion = []
 
         for equipo in self._equipos:
-            clasificacion.append(str(equipo))
+            clasificacion.append(equipo.get_puntos())
 
-        clasificacion = clasificacion.sort()
+        clasificacion.sort()
 
         return clasificacion
 

@@ -3,7 +3,8 @@ from torneo import *
 from equipoNonExisteError import *
 
 celta = Equipo("Celta")
-torneo = Torneo("Torneo",celta,3,1)
+madrid = Equipo("Madrid")
+torneo = Torneo("Torneo",[celta,madrid],3,1)
 
 try:
     while True:
