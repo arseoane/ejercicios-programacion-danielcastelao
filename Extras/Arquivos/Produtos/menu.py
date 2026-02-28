@@ -68,7 +68,9 @@ while True:
                 print("Opción inválida.")
 
     except ValueError:
+        print("================")
         print("Opción inválida.")
 
     except Exception as e:
+        print("================")
         print(f"Erro: '{e}'.")
