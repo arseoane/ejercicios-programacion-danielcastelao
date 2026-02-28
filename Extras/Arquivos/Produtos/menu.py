@@ -25,23 +25,21 @@ while True:
     ''')
 
     opcion = int(input("Opción: "))
+    print("================")
 
     match opcion:
         case 99:
             exit()
         case 1:
-            print("================")
             for prod in lsprods:
                 print(prod)
 
         case 2:
-            print("================")
             prod = Producto(input("Nome: "), input("Cantidade: "), input("Prezo: "))
             with open("produtos.csv", "a") as arquivo:
                 arquivo.write(f"\n{prod.nome},{prod.cantidade},{prod.prezo}")
 
         case 3:
-            print("================")
             query = input("Ingrese unha búsqueda: ")
 
             numresultados = 0
