@@ -24,43 +24,51 @@ while True:
 0. Saír.
     ''')
 
-    opcion = int(input("Opción: "))
-    print("================")
 
-    match opcion:
-        case 0:
-            exit()
-        case 1:
-            for prod in lsprods:
-                print(prod)
+    try:
+        opcion = int(input("Opción: "))
+        print("================")
 
-        case 2:
-            prod = Produto(input("Nome: "), input("Cantidade: "), input("Prezo: "))
-            with open("produtos.csv", "a") as arquivo:
-                arquivo.write(f"\n{prod.nome},{prod.cantidade},{prod.prezo}")
+        match opcion:
+            case 0:
+                exit()
+            case 1:
+                for prod in lsprods:
+                    print(prod)
 
-        case 3:
-            query = input("Ingrese unha búsqueda: ")
+            case 2:
+                prod = Produto(input("Nome: "), input("Cantidade: "), input("Prezo: "))
+                with open("produtos.csv", "a") as arquivo:
+                    arquivo.write(f"\n{prod.nome},{prod.cantidade},{prod.prezo}")
 
-            numresultados = 0
-            for prod in lsprods:
-                if query.lower() in prod.nome.lower():
-                    numresultados += 1
+            case 3:
+                query = input("Ingrese unha búsqueda: ")
 
-            if numresultados == 0:
-                print("Non se atoparon resultados.")
-
-            elif numresultados == 1:
-                print(f"Hai {numresultados} resultado de '{query}':\n")
+                numresultados = 0
                 for prod in lsprods:
                     if query.lower() in prod.nome.lower():
-                        print(prod)
+                        numresultados += 1
 
-            else:
-                print(f"Hai {numresultados} resultados de '{query}':\n")
-                for prod in lsprods:
-                    if query.lower() in prod.nome.lower():
-                        print(prod)
+                if numresultados == 0:
+                    print("Non se atoparon resultados.")
 
-        case _:
-            print("Opción inválida.")
+                elif numresultados == 1:
+                    print(f"Hai {numresultados} resultado de '{query}':\n")
+                    for prod in lsprods:
+                        if query.lower() in prod.nome.lower():
+                            print(prod)
+
+                else:
+                    print(f"Hai {numresultados} resultados de '{query}':\n")
+                    for prod in lsprods:
+                        if query.lower() in prod.nome.lower():
+                            print(prod)
+
+            case _:
+                print("Opción inválida.")
+
+    except ValueError:
+        print("Opción inválida.")
+
+    except Exception as e:
+        print(f"Erro: '{e}'.")
