@@ -22,7 +22,7 @@ while True:
 2. Crear produto.
 3. Buscar produtos.
 0. Saír.
-    ''')
+''')
 
 
     try:
