@@ -1,4 +1,4 @@
-class Producto:
+class Produto:
     def __init__(self, nome, cantidade, prezo):
         self.nome = nome
         self.cantidade = cantidade
@@ -14,28 +14,28 @@ while True:
         next(arquivo)
         produtos = arquivo.readlines()
         for produto in produtos:
-            prod = Producto(produto.split(",")[0], produto.split(",")[1], produto.split(",")[2])
+            prod = Produto(produto.split(",")[0], produto.split(",")[1], produto.split(",")[2])
             lsprods.append(prod)
 
     print('''================
-1. Listar productos.
-2. Crear productos.
-3. Buscar productos.
-99. Saír.
+1. Listar produtos.
+2. Crear produto.
+3. Buscar produtos.
+0. Saír.
     ''')
 
     opcion = int(input("Opción: "))
     print("================")
 
     match opcion:
-        case 99:
+        case 0:
             exit()
         case 1:
             for prod in lsprods:
                 print(prod)
 
         case 2:
-            prod = Producto(input("Nome: "), input("Cantidade: "), input("Prezo: "))
+            prod = Produto(input("Nome: "), input("Cantidade: "), input("Prezo: "))
             with open("produtos.csv", "a") as arquivo:
                 arquivo.write(f"\n{prod.nome},{prod.cantidade},{prod.prezo}")
 
