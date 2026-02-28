@@ -17,8 +17,10 @@ while True:
             prod = Producto(produto.split(",")[0], produto.split(",")[1], produto.split(",")[2])
             lsprods.append(prod)
 
-    print('''1. Listar productos.
+    print('''================
+1. Listar productos.
 2. Crear productos.
+3. Buscar productos.
 99. Saír.
     ''')
 
@@ -28,13 +30,39 @@ while True:
         case 99:
             exit()
         case 1:
+            print("================")
             for prod in lsprods:
                 print(prod)
 
         case 2:
+            print("================")
             prod = Producto(input("Nome: "), input("Cantidade: "), input("Prezo: "))
             with open("produtos.csv", "a") as arquivo:
                 arquivo.write(f"\n{prod.nome},{prod.cantidade},{prod.prezo}")
+
+        case 3:
+            print("================")
+            query = input("Ingrese unha búsqueda: ")
+
+            numresultados = 0
+            for prod in lsprods:
+                if query.lower() in prod.nome.lower():
+                    numresultados += 1
+
+            if numresultados == 0:
+                print("Non se atoparon resultados.")
+
+            elif numresultados == 1:
+                print(f"Hai {numresultados} resultado de '{query}':\n")
+                for prod in lsprods:
+                    if query.lower() in prod.nome.lower():
+                        print(prod)
+
+            else:
+                print(f"Hai {numresultados} resultados de '{query}':\n")
+                for prod in lsprods:
+                    if query.lower() in prod.nome.lower():
+                        print(prod)
 
         case _:
             print("Opción inválida.")
