@@ -1,3 +1,7 @@
+import pickle
+import csv
+
+
 class Produto:
     def __init__(self, nome, cantidade, prezo):
         self.nome = nome
@@ -6,6 +10,22 @@ class Produto:
 
     def __str__(self):
         return f"Nome: {self.nome}\nCantidade: {self.cantidade}\nPrezo: {self.prezo}"
+
+    def gardar_datos(self, ruta_csv):
+        with open(ruta_csv, "w", newline='', encoding="utf-8") as arquivo:
+            escritor = csv.writer(arquivo)
+            escritor.writerow(["nome", "cantidade", "prezo"])
+            for produto in self.produtos:
+                escritor.writerow(
+                    [produto.nome, produto.cantidade, produto.prezo]
+                )
+
+    def gardar_datos_binarios(self, ruta):
+        with open(ruta, "wb") as f:
+            pickle.dump(self.produtos, f)
+
+
+
 
 while True:
     lsprods = []
