@@ -4,7 +4,9 @@
 # teléfono
 
 class Cliente():
-    idcount = 0
+    with open("clientes.txt","r") as clientes:
+        idcount = len(clientes.readlines())
+
     def __init__(self, nome, telefono):
         self.id = Cliente.idcount
         self.nome = nome
@@ -15,19 +17,30 @@ class Cliente():
     def __str__(self):
         return f"{self.id},{self.nome},{self.telefono}\n"
 
-print('''
-1. Gardar cliente.
 
-2. Listar clientes.
-''')
 
-opcion = input("Ingrese una opción: ")
+while True:
+    print('''
+    1. Gardar cliente.
 
-if opcion == "1":
-    cliente = Cliente(input("Nome: "),input("Teléfono: "))
-    with open("clientes.txt","a") as f:
-        f.write(str(cliente))
+    2. Listar clientes.
 
-elif opcion == "2":
-    with open("clientes.txt","r") as f:
-        print(f.readlines())
+    0. Saír e gardar.
+    ''')
+
+    opcion = input("Ingrese una opción: ")
+
+    if opcion == "0":
+        break
+
+    elif opcion == "1":
+        cliente = Cliente(input("Nome: "),input("Teléfono: "))
+        with open("clientes.txt","a") as f:
+            f.write(str(cliente))
+
+    elif opcion == "2":
+        with open("clientes.txt","r") as f:
+            contido = f.readlines()
+
+            for linea in contido:
+                print(linea)
