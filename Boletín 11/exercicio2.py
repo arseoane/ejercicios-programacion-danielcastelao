@@ -12,7 +12,7 @@ nomeficheiro = input("Nome do ficheiro a ler: ")
 with open(nomeficheiro, "r") as ficheiro:
     for linea in ficheiro:
         linea = linea.lower()
-        for c in ",.!?":
+        for c in ",.;!?¡¿":
             linea = linea.replace(c, "")
 
         palabras = linea.split()

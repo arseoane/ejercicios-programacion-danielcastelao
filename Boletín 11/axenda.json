@@ -1,1 +1,9 @@
-{"nome": "pepe", "telefonos": "['112', '666', '028', '016']", "email": "pepe@pepe.com"}
+[
+    {
+        "nome": "pepe",
+        "telefonos": [
+            "67"
+        ],
+        "email": "pepe@pepe.com"
+    }
+]
